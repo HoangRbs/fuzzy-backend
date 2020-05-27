@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/patientsDB', {useNewUrlParser: true});
+let public_DB_Url = "mongodb+srv://hoangMinh:123@cluster0-u62et.mongodb.net/patientsDB?retryWrites=true&w=majority"
+
+mongoose.connect(public_DB_Url, {useNewUrlParser: true});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
